@@ -1,2 +1,0 @@
-password=
-creationTime=2015-01-10 13:00:13
