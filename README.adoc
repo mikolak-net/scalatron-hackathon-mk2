@@ -1,0 +1,29 @@
+= MK2 Bot from the 2015-10-01 Scalatron Hackathon in Warsaw
+
+== Introduction
+
+This is code for a bot created with https://github.com/michalkarolik[Michał] during the http://www.meetup.com/WarszawScaLa/events/219296749["Scalatron na Narodowym w JAVEO" Hackatron].
+
+It's a simple bot that mostly implements simple "bad-avoidance, good-following" with a twist (see <<Notes>>).
+Instead of focusing on the AI we've decided to work on the code structure instead, working towards something akin
+ to a nice https://en.wikipedia.org/wiki/Entity_component_system[entity-component-system]
+ footnote:[This is our official version on why we were only 13/21 in the tourney, and we're sticking with it.].
+
+== Notes
+
+* This is a very rudimentary SBT project, with no automated deploy tasks. We've looked over http://jmhofer.johoop.de/?p=292[a couple]
+http://jmhofer.johoop.de/?p=292[of various] SBT definition templates, but none seem to be really complete (and completely working
+with all version of Scalatron).
+* We partially based the project on the "Reference bot", but only used the utility classes (`XY`, `Direction`, `View` etc.), and
+ further modified them for our needs. The logic itself is built from the ground up.
+* **This is not the same code as the one used in the tournament.** In particular, it adds a rather nasty feature
+ footnote:[That was completed to late, some 20 minutes after the tourney's start.] that aggressively tries to monopolize
+ all available resources by mass spawning, recursive minibots. Kills the reference bot (and the CPU) a treat. **If you
+  want to test the bot in the "tournament version", remove the spawning logic in `normalBehavior()`**.
+* No, the code is not very clean ;).
+* Believe it or not, the logic is deliberately simple. In a tournament of this type, it looks like the situation is so chaotic
+that it pays to just keep focusing on the local situation, instead of focusing on elaborate globalized solution that may
+be actually fare worse than a pure random-walk footnote:[For example, it became evident that
+https://github.com/scalatron/scalatron/blob/master/Scalatron/doc/markdown/Scalatron%20Game%20Rules.md#the-entity-types[Fluppets]
+  were hearded towards the bot anyway, running away from the others.].
+
