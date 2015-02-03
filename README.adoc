@@ -17,7 +17,7 @@ with all version of Scalatron).
 * We partially based the project on the "Reference bot", but only used the utility classes (`XY`, `Direction`, `View` etc.), and
  further modified them for our needs. The logic itself is built from the ground up.
 * **This is not the same code as the one used in the tournament.** In particular, it adds a rather nasty feature
- footnote:[That was completed to late, some 20 minutes after the tourney's start.] that aggressively tries to monopolize
+ footnote:[That was completed too late, some 20 minutes after the tourney's start.] that aggressively tries to monopolize
  all available resources by mass spawning, recursive minibots. Kills the reference bot (and the CPU) a treat. **If you
   want to test the bot in the "tournament version", remove the spawning logic in `normalBehavior()`**.
 * No, the code is not very clean ;).
